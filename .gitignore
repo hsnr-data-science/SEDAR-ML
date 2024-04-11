@@ -165,4 +165,3 @@ cython_debug/
 #.idea/
 AutoMLOutput/
 .vscode/
-*.ipynb
