@@ -1,4 +1,4 @@
-# Supporting-Material
+# SEDAR-ML
 
 This repo contains supporting information, code and the datasets for our publication [Integrating AutoML and LLMs with the open-source data lake SEDAR](https://link.com).
 
