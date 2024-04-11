@@ -1,0 +1,360 @@
+ImageClassifier:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      max_trials:
+        __has_values: false
+        __dtype: int
+        __user_mapping: num_trials
+        __hint: Number of different models to try
+      multi_label:
+        __has_values: false
+        __dtype: bool
+        __user_mapping: multi_label
+        __hint: Output several predictions for each class
+      max_model_size:
+        __has_values: false
+        __dtype: int
+        __user_mapping: max_model_size
+        __hint: Maximum size of the model in bytes
+      objective: 
+        __has_values: false
+        __dtype: string
+        __user_mapping: objective_metric
+        __hint: Metric to optimize the model for. If set, must be contained in the provided list of metrics or loss functions
+      metrics:
+        __has_values: true
+        __values:
+          - binary_crossentropy
+          - binary_accuracy
+          - categorical_accuracy
+          - sparse_categorical_accuracy
+          - top_k_categorical_accuracy
+          - sparse_top_k_categorical_accuracy
+          - AUC
+          - Precision
+          - Recall
+          - binary_crossentropy
+          - categorical_crossentropy
+          - sparse_categorical_crossentropy
+          - kl_divergence
+          - poisson
+        __dtype: str
+        __user_mapping: evaluation_metric
+        __hint: Metric to use for training and validation. Passing a list of values is also possible.
+      loss:
+        __has_values: true
+        __values:
+          - binary_crossentropy
+          - categorical_crossentropy
+          - sparse_categorical_crossentropy
+          - poisson
+          - kl_divergence
+        __dtype: str
+        __user_mapping: evaluation_loss
+        __hint: Loss function to use for training and validation. Passing a list of values is also possible.
+    fit:
+      epochs: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: epochs
+        __hint: Number of epochs to train each model
+
+ImageRegressor:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      max_trials: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: num_trials
+        __hint: Number of different models to try
+      max_model_size:
+        __has_values: false
+        __dtype: int
+        __user_mapping: max_model_size
+        __hint: Maximum size of the model in bytes
+      objective: 
+        __has_values: false
+        __dtype: string
+        __user_mapping: objective_metric
+        __hint: Metric to optimize the model for. If set, must be contained in the provided list of metrics or loss functions
+      metrics:
+        __has_values: true
+        __values:
+          - mean_squared_error
+          - root_mean_squared_error
+          - mean_absolute_error
+          - mean_absolute_percentage_error
+          - cosine_similarity
+        __dtype: str
+        __user_mapping: evaluation_metric
+        __hint: Metric to use for training and validation. Passing a list of values is also possible.
+      loss:
+        __has_values: true
+        __values:
+          - mean_squared_error
+          - mean_absolute_error
+          - mean_absolute_percentage_error
+          - mean_squared_logarithmic_error
+          - cosine_similarity
+          - huber_loss
+        __dtype: str
+        __user_mapping: evaluation_loss
+        __hint: Loss function to use for training and validation. Passing a list of values is also possible.
+    fit:
+      epochs: 
+        __has_values: false
+        __dtype: int,
+        __user_mapping: epochs
+        __hint: Number of epochs to train each model
+
+TextClassifier:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      max_trials: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: num_trials
+        __hint: Number of different models to try
+      max_model_size: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: max_model_size
+        __hint: Maximum size of the model in bytes
+      multi_label:
+        __has_values: false
+        __dtype: bool
+        __user_mapping: multi_label
+        __hint: Output several predictions for each class
+      objective: 
+        __has_values: false
+        __dtype: string
+        __user_mapping: objective_metric
+        __hint: Metric to optimize the model for. If set, must be contained in the provided list of metrics or loss functions
+      metrics:
+        __has_values: true
+        __values:
+          - binary_crossentropy
+          - binary_accuracy
+          - categorical_accuracy
+          - sparse_categorical_accuracy
+          - top_k_categorical_accuracy
+          - sparse_top_k_categorical_accuracy
+          - AUC
+          - Precision
+          - Recall
+          - binary_crossentropy
+          - categorical_crossentropy
+          - sparse_categorical_crossentropy
+          - kl_divergence
+          - poisson
+        __dtype: str
+        __user_mapping: evaluation_metric
+        __hint: Metric to use for training and validation. Passing a list of values is also possible.
+      loss:
+        __has_values: true
+        __values:
+          - binary_crossentropy
+          - categorical_crossentropy
+          - sparse_categorical_crossentropy
+          - poisson
+          - kl_divergence
+        __dtype: str
+        __user_mapping: evaluation_loss
+        __hint: Loss function to use for training and validation. Passing a list of values is also possible.
+    fit:
+      epochs: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: epochs
+        __hint: Number of epochs to train each model
+
+TextRegressor:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      max_trials: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: num_trials
+        __hint: Number of different models to try
+      max_model_size: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: max_model_size
+        __hint: Maximum size of the model in bytes
+      objective: 
+        __has_values: false
+        __dtype: string
+        __user_mapping: objective_metric
+        __hint: Metric to optimize the model for. If set, must be contained in the provided list of metrics or loss functions
+      metrics:
+        __has_values: true
+        __values:
+          - mean_squared_error
+          - root_mean_squared_error
+          - mean_absolute_error
+          - mean_absolute_percentage_error
+          - cosine_similarity
+        __dtype: str
+        __user_mapping: evaluation_metric
+        __hint: Metric to use for training and validation. Passing a list of values is also possible.
+      loss:
+        __has_values: true
+        __values:
+          - mean_squared_error
+          - mean_absolute_error
+          - mean_absolute_percentage_error
+          - mean_squared_logarithmic_error
+          - cosine_similarity
+          - huber_loss
+        __dtype: str
+        __user_mapping: evaluation_loss
+        __hint: Loss function to use for training and validation. Passing a list of values is also possible.
+    fit:
+      epochs: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: epochs
+        __hint: Number of epochs to train each model
+
+StructuredDataClassifier:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      max_trials: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: num_trials
+        __hint: Number of different models to try
+      max_model_size: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: max_model_size
+        __hint: Maximum size of the model in bytes
+      multi_label:
+        __has_values: false
+        __dtype: bool
+        __user_mapping: multi_label
+        __hint: Output several predictions for each class
+      objective: 
+        __has_values: false
+        __dtype: string
+        __user_mapping: objective_metric
+        __hint: Metric to optimize the model for. If set, must be contained in the provided list of metrics or loss functions
+      metrics:
+        __has_values: true
+        __values:
+          - accuracy 
+          - binary_accuracy
+          - categorical_accuracy
+          - sparse_categorical_accuracy
+          - top_k_categorical_accuracy
+          - sparse_top_k_categorical_accuracy
+          - AUC
+          - Precision
+          - Recall
+          - binary_crossentropy
+          - categorical_crossentropy
+          - sparse_categorical_crossentropy
+          - kl_divergence
+          - poisson
+        __dtype: str
+        __user_mapping: evaluation_metric
+        __hint: Metric to use for training and validation. Passing a list of values is also possible.
+      loss:
+        __has_values: true
+        __values:
+          - binary_crossentropy
+          - categorical_crossentropy
+          - sparse_categorical_crossentropy
+          - poisson
+          - kl_divergence
+        __dtype: str
+        __user_mapping: evaluation_loss
+        __hint: Loss function to use for training and validation. Passing a list of values is also possible.
+    fit:
+      epochs: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: epochs
+        __hint: Number of epochs to train each model
+
+StructuredDataRegressor:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      max_trials: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: num_trials
+        __hint: Number of different models to try
+      max_model_size: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: max_model_size
+        __hint: Maximum size of the model in bytes
+      metrics:
+        __has_values: true
+        __values:
+          - mean_squared_error
+          - root_mean_squared_error
+          - mean_absolute_error
+          - mean_absolute_percentage_error
+          - cosine_similarity
+        __dtype: str
+        __user_mapping: evaluation_metric
+        __hint: Metric to use for training and validation. Passing a list of values is also possible.
+      loss:
+        __has_values: true
+        __values:
+          - mean_squared_error
+          - mean_absolute_error
+          - mean_absolute_percentage_error
+          - mean_squared_logarithmic_error
+          - cosine_similarity
+          - huber_loss
+        __dtype: str
+        __user_mapping: evaluation_loss
+        __hint: Loss function to use for training and validation. Passing a list of values is also possible.
+      objective: 
+        __has_values: false
+        __dtype: string
+        __user_mapping: objective_metric
+        __hint: Metric to optimize the model for. If set, must be contained in the provided list of metrics or loss functions
+    fit:
+      epochs: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: epochs
+        __hint: Number of epochs to train each model
+
+TimeseriesForecaster:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      max_trials: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: num_trials
+        __hint: Number of different models to try
+      max_model_size: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: max_model_size
+        __hint: Maximum size of the model in bytes
+    fit:
+      epochs: 
+        __has_values: false
+        __dtype: int
+        __user_mapping: epochs
+        __hint: Number of epochs to train each model

@@ -1,0 +1,145 @@
+AutoGluon:
+  __classes:
+    MultiModalPredictor:
+      __data_types:
+        image:
+          __task_types:
+            classification:
+              __problem_types:
+                - binary
+                - multiclass
+            few-shot-classification:
+              __problem_types:
+                - binary
+                - multiclass
+            zero-shot-classification:
+              __problem_types:
+                - binary
+                - multiclass
+            regression:
+              __problem_types:
+                - regression
+            object-detection:
+              __problem_types:
+                - object-detection
+            zero-shot-object-detection:
+              __problem_types:
+                - object-detection
+            similarity:
+              __problem_types:
+                - similarity
+            segmentation:
+              __problem_types:
+                - binary
+                - multiclass
+        text:
+          __task_types:
+            similarity:
+              __problem_types:
+                - similarity
+            classification:
+              __problem_types:
+                - binary
+                - multiclass
+            few-shot-classification:
+              __problem_types:
+                - binary
+                - multiclass
+    TabularPredictor:
+      __data_types:
+        tabular:
+          __task_types:
+            classification:
+              __problem_types:
+                - binary
+                - multiclass
+            regression:
+              __problem_types:
+                - regression
+                - quantile
+    TimeSeriesPredictor:
+      __data_types:
+        timeseries:
+          __task_types:
+            forecast:
+              __problem_types:
+                - forecast
+AutoSklearn:
+  __classes:
+    AutoSklearnClassifier:
+      __data_types:
+        tabular:
+          __task_types:
+            classification:
+              __problem_types:
+                - binary
+                - multiclass
+                - multilabel
+    AutoSklearnRegressor:
+      __data_types:
+        tabular:
+          __task_types:
+            regression:
+              __problem_types:
+                - regression
+                - multioutput
+AutoKeras:
+  __classes:
+    TextClassifier:
+      __data_types:
+        text:
+          __task_types:
+            classification:
+              __problem_types:
+                - binary
+                - multiclass
+                - multilabel
+    TextRegressor:
+      __data_types:
+        text:
+          __task_types:
+            regression:
+              __problem_types:
+                - regression
+                - multioutput
+    StructuredDataClassifier:
+      __data_types:
+        tabular:
+          __task_types:
+            classification:
+              __problem_types:
+                - binary
+                - multiclass
+                - multilabel
+    StructuredDataRegressor:
+      __data_types:
+        tabular:
+          __task_types:
+            regression:
+              __problem_types:
+                - regression
+                - multioutput
+    ImageClassifier:
+      __data_types:
+        image:
+          __task_types:
+            classification:
+              __problem_types:
+                - binary
+                - multiclass
+                - multilabel
+    ImageRegressor:
+      __data_types:
+        image:
+          __task_types:
+            regression:
+              __problem_types:
+                - regression
+                - multioutput
+    TimeseriesForecaster:
+      __data_types:
+        timeseries:
+          __task_types:
+            forecast:
+              __problem_types:
+                - forecast

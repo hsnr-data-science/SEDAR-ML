@@ -1,0 +1,300 @@
+MultiModalPredictor:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      verbosity:
+        __has_values: true
+        __dtype: int
+        __values:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+        __user_mapping: verbosity
+        __hint: Verosity of the output. ( 0 None to 4 Debug).
+      presets:
+        __has_values: true
+        __dtype: str
+        __values:
+          - best_quality
+          - high_quality
+          - medium_quality
+          - best_quality_hpo
+          - high_quality_hpo
+          - medium_quality_hpo
+        __user_mapping: preset
+        __hint: Preset for the quality of the model. Higher quality models take longer to train.
+      eval_metric:
+        __has_values: true
+        __values:
+          - accuracy
+          - f1
+          - f1_macro
+          - f1_micro
+          - f1_weighted
+          - roc_auc
+          - average_precision
+          - precision
+          - precision_macro
+          - precision_micro
+          - precision_weighted
+          - recall
+          - recall_macro
+          - recall_micro
+          - recall_weighted
+          - log_loss
+          - root_mean_squared_error
+          - r2
+          - symmetric_mean_absolute_percentage_error
+          - iou
+          - ber
+          - sm 
+          - map
+          - map_50
+          - map_75
+          - map_small
+          - map_medium
+          - map_large
+          - mar_1
+          - mar_10
+          - mar_100
+          - mar_small
+          - mar_medium
+          - map_small
+          - mar_large
+        __dtype: str
+        __user_mapping: eval_metric
+        __hint: Metric to use during training. Segmentation;[iou] object-detection; [map_..., mar_...]
+      validation_metric:
+        __has_values: true
+        __values:
+          - accuracy
+          - f1
+          - f1_macro
+          - f1_micro
+          - f1_weighted
+          - roc_auc
+          - average_precision
+          - precision
+          - precision_macro
+          - precision_micro
+          - precision_weighted
+          - recall
+          - recall_macro
+          - recall_micro
+          - recall_weighted
+          - log_loss
+          - root_mean_squared_error
+          - r2
+          - symmetric_mean_absolute_percentage_error
+          - iou
+          - ber
+          - sm 
+          - map
+          - map_50
+          - map_75
+          - map_small
+          - map_medium
+          - map_large
+          - mar_1
+          - mar_10
+          - mar_100
+          - mar_small
+          - mar_medium
+          - map_small
+          - mar_large
+        __dtype: str
+        __user_mapping: validation_metric
+        __hint: Metric to use during validation. Segmentation;[iou, ber, sm] object detection; [map_..., mar_...]
+      pretrained:
+        __has_values: false
+        __dtype: bool
+        __user_mapping: use_pretrained_model
+        __hint: Wether to use weights from pretrained models or initialize random weigths. 
+    fit:
+      time_limit:
+        __has_values: false
+        __dtype: int
+        __user_mapping: time_limit
+        __hint: Time limit for the experiment in seconds.
+      __extra_args:
+        hyperparameter_tune_kwargs:
+          __dtype: dict
+          num_trials:
+              __has_values: false
+              __dtype: int
+              __user_mapping: num_trials
+              __hint: Number of different models to try.
+        hyperparameters:
+          __dtype: dict
+          optimization.learning_rate:
+            __has_values: false
+            __dtype: float
+            __user_mapping: learning_rate
+            __hint: Learning rate for the model.
+          optimization.max_epochs:
+            __has_values: false
+            __dtype: int
+            __user_mapping: max_epochs
+            __hint: Maximum number of epochs to train the model.
+          optimization.patience:
+            __has_values: false
+            __dtype: int
+            __user_mapping: patience
+            __hint: Number of epochs to wait for improvement before stopping the training. Used for early stopping.
+
+    predict:
+      candidate_data:
+        __has_values: false
+        __dtype: list
+        __user_mapping: zero_shot_targets
+        __hint: List of candidates for the model to predict on
+
+TabularPredictor:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_details:
+    constructor:
+      verbosity:
+        __has_values: true
+        __dtype: int
+        __values:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+        __user_mapping: verbosity
+        __hint: Verosity of the output. ( 0 None to 4 Debug).
+      eval_metric:
+        __has_values: true
+        __values:
+          - accuracy
+          - balanced_accuracy
+          - f1
+          - f1_macro
+          - f1_micro
+          - f1_weighted
+          - roc_auc
+          - average_precision
+          - precision
+          - precision_macro
+          - precision_micro
+          - precision_weighted
+          - recall
+          - recall_macro
+          - recall_micro
+          - recall_weighted
+          - log_loss
+          - mean_squared_error
+          - mean_absolute_error
+          - root_mean_squared_error
+          - r2
+          - symmetric_mean_absolute_percentage_error
+        __dtype: str
+        __user_mapping: eval_metric
+        __hint: Metric to use during training and validation
+    fit:
+      time_limit:
+        __has_values: false
+        __dtype: int
+        __user_mapping: time_limit
+        __hint: Time limit for the experiment in seconds
+      presets:
+        __has_values: true
+        __dtype: str
+        __values:
+          - best_quality
+          - high_quality
+          - good_quality
+          - medium_quality
+          - optimize_for_deployment
+          - interpretable
+          - ignore_text
+        __user_mapping: preset
+        __hint: Preset for the quality of the model. Higher quality models take longer to train.
+      auto_stack:
+        __has_values: false
+        __dtype: bool
+        __user_mapping: stacking_ensemble
+        __hint: Whether to create a stacking ensemble of models. Increases training time.
+      __extra_args:
+        hyperparameter_tune_kwargs:
+          __dtype: dict
+          num_trials:
+            __has_values: false
+            __dtype: int
+            __user_mapping: num_trials
+            __hint: Number of different models to try
+        ds_argsdict:
+          __dtype: dict
+          validation_procedure:
+            __has_values: true
+            __dtype: str
+            __values:
+              - cv
+              - holdout
+            __user_mapping: validation_type
+            __hint: Method for validation if stacking is enabled. Choose either cross validation (cv) or holdout validation.
+        
+
+TimeSeriesPredictor:
+  __mlflow:
+    __log_model_type: pyfunc
+  __hyperparameter_mappings:
+    constructor:
+      verbosity:
+        __has_values: true
+        __dtype: int
+        __values:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+        __user_mapping: verbosity
+        __hint: Verosity of the output. ( 0 None to 4 Debug).
+      prediction_length:
+        __has_values: false
+        __dtype: int
+        __user_mapping: prediction_length
+        __hint: Number of time steps to predict into the future
+      eval_metric:
+        __has_values: true
+        __dtype: str
+        __values:
+          - mean_wQuantileLoss
+          - MAPE
+          - sMAPE
+          - MASE
+          - MSE
+          - RMSE
+        __user_mapping: eval_metric
+        __hint: Metric to use for evaluation
+    fit:
+      time_limit:
+        __has_values: false
+        __dtype: int
+        __user_mapping: time_limit
+        __hint: Time limit for the experiment in seconds
+      presets:
+        __has_values: true
+        __dtype: str
+        __values:
+          - best_quality
+          - high_quality
+          - medium_quality
+          - fast training
+        __user_mapping: preset
+        __hint: Preset for the quality of the model. Higher quality models take longer to train.
+      __extra_args:
+        hyperparameter_tune_kwargs:
+          __dtype: dict
+          num_trials:
+            __has_values: false
+            __dtype: int
+            __user_mapping: num_trials
+            __hint: Number of different models to try
+
