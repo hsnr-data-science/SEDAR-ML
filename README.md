@@ -8,7 +8,7 @@ Special emphasis is placed on the standardized construction of AutoML jobs by co
 Object-oriented programming for library-unspecific logic facilitates easy integration of new AutoML libraries without redesigning the entire interface.
 
 # Notebooks
-The folder notebooks contains the the Jupyter Notebooks to conduct the evaluation. They can be executed alongside the [SEDAR default image](https://hub.docker.com/r/mxibbls/gpu-jupyter-mlflow/) (stable tag). 
+The folder notebooks contains the the Jupyter Notebooks to conduct the evaluation. They were generated in parts by the [SEDAR](https://github.com/hsnr-data-science/SEDAR) backend and can be executed alongside the [SEDAR default image](https://hub.docker.com/r/mxibbls/gpu-jupyter-mlflow/) (stable tag). 
 
 # Training Details
 
