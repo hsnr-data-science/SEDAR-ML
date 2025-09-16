@@ -1,8 +1,7 @@
-# SEDAR-ML
+# AutoMLWrapper
 
 This repo contains supporting information, code and the datasets for our publication [Enhancing Machine Learning Capabilities in Data Lakes with AutoML and LLMs](https://link.springer.com/chapter/10.1007/978-3-031-70626-4_13).
 
-# AutoMLWrapper
 The AutoMLWrapper is a Python module acting as an interface for three open-source AutoML frameworks: AutoKeras, AutoGluon and AutoSklearn.
 Special emphasis is placed on the standardized construction of AutoML jobs by configuring the underlying libraries using a common set of parameters.
 Object-oriented programming for library-unspecific logic facilitates easy integration of new AutoML libraries without redesigning the entire interface.
