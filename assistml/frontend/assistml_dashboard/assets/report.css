@@ -1,0 +1,251 @@
+/* Hauptcontainer als Grid */
+.implementation-group-report-container {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: auto 1fr;
+    width: 70vw;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+/* Header nimmt beide Spalten ein */
+.implementation-group-report-container .header {
+    display: contents;
+}
+
+/* Score */
+.implementation-group-report-container .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*font-size: 1.5em;
+    font-weight: bold;*/
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+/* Title & Metrics Container */
+.implementation-group-report-container .title-and-metrics-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titel */
+.implementation-group-report-container .title {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 2px solid black;
+    background-color: #8DAD26;
+}
+
+/* Metriken als Grid */
+.implementation-group-report-container .metrics {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Einzelne Metriken */
+.implementation-group-report-container .metric {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 32px;
+}
+
+.implementation-group-report-container .metric * {
+    height: 100%;
+    letter-spacing: 0;
+    margin-bottom: 0;
+    /*line-height: 32px;
+    font-size: 2rem;*/
+    box-sizing: border-box;
+    overflow: clip;
+    padding: 5px;
+}
+
+.implementation-group-report-container .metric label {
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.implementation-group-report-container .metric label::after {
+    content: " Potential";
+}
+
+.implementation-group-report-container .metric p {
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 60px;
+    font-weight: bold;
+    border-left: 2px solid black;
+}
+
+.implementation-group-report-container .metric p:nth-of-type(1) {
+    display: block;
+}
+
+.implementation-group-report-container .metric p:nth-of-type(2) {
+    display: none;
+}
+
+.implementation-group-report-container .metric:hover p:nth-of-type(1) {
+    display: none;
+}
+
+.implementation-group-report-container .metric:hover p:nth-of-type(2) {
+    display: block;
+}
+
+/* Content-Container */
+.implementation-group-report-container .content-container {
+    display: contents;
+}
+
+/* Sidebar */
+.implementation-group-report-container .sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid black;
+}
+
+/* Sidebar Content */
+.implementation-group-report-container .content-block {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding: 8px;
+}
+
+/* Hauptinhalt */
+.implementation-group-report-container .main-content {
+    padding: 16px;
+}
+
+.implementation-group-report-container .score label,
+.implementation-group-report-container .content-block label {
+    /*font-size: 2rem;
+    font-weight: bold;*/
+    margin-bottom: 0;
+}
+
+.implementation-group-report-container .score p,
+.implementation-group-report-container .content-block p {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.dataset-group-report-container {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: auto 1fr;
+    border: 2px solid black;
+}
+
+.dataset-group-report-container:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+.dataset-group-report-container .title {
+    grid-column: span 2;
+    background-color: cornflowerblue;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hyperparameter-configuration-report-container .title {
+    border: none;
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: #dbdbdb;
+    line-height: 20px;
+}
+
+.hyperparameter-configuration-report-container .tree-container {
+    margin-bottom: 15px;
+}
+
+
+.hyperparameter-configuration-report-container .tree,
+.hyperparameter-configuration-report-container .tree ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 15px;
+    position: relative;
+    font-size: 100%;
+}
+
+.hyperparameter-configuration-report-container .tree li {
+    margin: 0;
+    position: relative;
+    padding-left: 20px;
+    padding-bottom: 3px;
+}
+
+.hyperparameter-configuration-report-container .tree li.undefined {
+    text-decoration: line-through;
+}
+
+.hyperparameter-configuration-report-container .tree li:first-of-type {
+    padding-top: 3px;
+}
+
+.hyperparameter-configuration-report-container .tree li:last-of-type {
+    padding-bottom: 10px;
+}
+
+.hyperparameter-configuration-report-container .tree li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    border-left: 2px solid #aaa;
+}
+
+.hyperparameter-configuration-report-container .tree li::after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 10px;
+    border-top: 2px solid #aaa;
+}
+
+.hyperparameter-configuration-report-container .tree li:last-child::before {
+    height: 13px;
+}
+
+.hyperparameter-configuration-report-container .tree span {
+
+}
+
+.hyperparameter-configuration-report-container .hyperparameter .hyperparameter-name::after {
+    content: ": ";
+}
+
+.hyperparameter-configuration-report-container .tree li.root > span.implementation,
+.hyperparameter-configuration-report-container .hyperparameter.implementation .hyperparameter-value {
+    text-decoration: underline;
+}
+
+.hyperparameter-configuration-report-container .hyperparameter:not(.default) {
+    font-weight: bold;
+}
+
+.hyperparameter-configuration-report-container .hyperparameter.default .hyperparameter-value::after {
+    content: " (default)";
+    font-style: italic;
+    color: #aaaaaa;
+}
+
+.hyperparameter-configuration-report-container .hyperparameter.default .hyperparameter-value.undefined::after {
+    content: "<undefined> (default)";
+}

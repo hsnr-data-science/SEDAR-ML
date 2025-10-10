@@ -1,0 +1,13 @@
+quart
+hypercorn
+pymongo
+pandas
+scipy
+nltk
+scikit-learn
+mlxtend==0.23.1
+liac-arff
+beanie
+pydantic
+python-dotenv
+motor
