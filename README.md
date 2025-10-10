@@ -1,3 +1,16 @@
+# SEDAR-ML
+
+**SEDAR-ML** is a research repository that consolidates three complementary approaches for automating and enhancing Machine Learning workflows within the **SEDAR** semantic data lake framework.  
+The project explores different levels of automation — from traditional AutoML to LLM-driven code generation and knowledge-graph-enhanced reasoning — to advance the integration of semantic data management and intelligent ML assistance in Industry 4.0 settings.
+
+1. **AutoMLWrapper** – a standardized interface for open-source AutoML frameworks (AutoKeras, AutoGluon, AutoSklearn), enabling uniform configuration, experiment tracking, and MLFlow integration.  
+2. **LLM-orchestrated ML** – a pipeline that leverages large language models to autonomously generate ML code inside the SEDAR environment, integrating profiling results and metadata through LangChain and JupyterAI.  
+3. **AssistML** – the *KG-enhanced Data Science Agent* approach, combining metadata from OpenML and the MLSea Knowledge Graph to generate semantically grounded model recommendations and hyperparameter configurations.
+
+Together, these three components form a unified research environment for studying the interplay between **AutoML**, **LLM-based orchestration**, and **Knowledge-Graph-driven Data Science Agents** within semantic data ecosystems.
+
+---
+
 # AutoMLWrapper
 
 This repo contains supporting information, code and the datasets for our publication [Enhancing Machine Learning Capabilities in Data Lakes with AutoML and LLMs](https://link.springer.com/chapter/10.1007/978-3-031-70626-4_13).
@@ -14,6 +27,8 @@ In our project, AssistML was used to ingest and profile datasets, search for sim
 The resulting report - containing the recommended model type and hyperparameter configuration - was then used as a prompt for a Large Language Model (LLM), which generated the complete Python code implementation for the suggested ML pipeline.
 
 ![AssistML_Pipeline](notebooks/Eval_Regression_AssistML_MLSea/images/AssistML_Pipeline.jpg)
+
+A related follow-up publication, *Towards Enhancing Data Science Agents with Semantics*, authored by Sayed Hoseini, Maximilian Ibbels, Maximilian Knoll, and Christoph Quix, extends the project’s research focus towards comparing the three different approaches which are also discussed in this project.
 
 ## AssistML Setup (Docker)
 This repository contains a dockerized version of the project.
@@ -96,14 +111,32 @@ This work is licensed under a
 
 
 ## Acknowledgments
-Sayed Hoseini and Gaoyuan Zhang equally contribute to this paper. 
-The authors acknowledge gratefully the cooperation with the HIT Institute which made this work possible. 
+Sayed Hoseini, Maximilian Ibbels and Christoph Quix contribute to the initial [paper](https://link.springer.com/chapter/10.1007/978-3-031-70626-4_13).<br>
+These authors also contributed to the follow-up publication, which was additionally authored by Maximilian Knoll.<br>
+Vincent Herrmann contributed to the integration and evaluation of AssistML within the SEDAR-ML framework.<br>
+The authors acknowledge gratefully the cooperation with the HIT Institute which made this work possible. <br>
 This work has been sponsored by the German Federal Ministry of Education and Research, Germany in the funding program “Forschung an Fachhochschulen”, project IDACH (grant no. 13FH557KX0, [i2DACH](https://www.hs-niederrhein.de/i2dach) ).
 
 
 ## Citing
 If you use this work in your research or wish to refer to the baseline results published here, please use the following BibTeX entries:
 
+*Enhancing Machine Learning Capabilities in Data Lakes with AutoML and LLMs*
+```bibtex
+@inproceedings{hoseini2024automl,
+  author    = {Hoseini, Sayed Massih and Ibbels, Maximilian and Quix, Christoph},
+  title     = {Enhancing Machine Learning Capabilities in Data Lakes with AutoML and LLMs},
+  booktitle = {Advances in Databases and Information Systems (ADBIS 2024)},
+  editor    = {Tekli, Joe and Gamper, Johann and Chbeir, Richard and Manolopoulos, Yannis},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {14918},
+  pages     = {177--191},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-70626-4_13},
+  url       = {https://link.springer.com/chapter/10.1007/978-3-031-70626-4_13}
+
+}
 ```
-@article{bibtex}
-```
+*Towards Enhancing Data Science Agents with Semantics*
