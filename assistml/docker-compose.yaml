@@ -1,0 +1,47 @@
+version: "4.2"
+
+name: assistml
+services:
+
+  mongodb:
+    container_name: assistml_mongodb
+    hostname: mongodb
+    image: mongo:8.0-noble
+    command: mongod --noauth
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongodb_data:/data/db"
+
+  backend:
+    container_name: assistml_backend
+    hostname: backend
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: ./backend/Dockerfile
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+    env_file:
+      - backend/backend-docker.env
+
+  dashboard:
+    container_name: assistml_dashboard
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: ./frontend/Dockerfile
+    depends_on:
+      - backend
+      - mongodb
+    ports:
+      - "8050:8050"
+    env_file:
+      - frontend/dashboard-docker.env
+
+volumes:
+  mongodb_data:
+

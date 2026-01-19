@@ -1,0 +1,11 @@
+dash-flash
+python-dotenv
+dash_bootstrap_components
+dash_renderjson
+pydantic
+pandas
+scikit-learn
+liac-arff
+beanie
+httpx
+motor
