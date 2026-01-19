@@ -28,7 +28,7 @@ The resulting report - containing the recommended model type and hyperparameter 
 
 ![AssistML_Pipeline](notebooks/Eval_Regression_AssistML_MLSea/images/AssistML_Pipeline.jpg)
 
-A related follow-up publication, *Towards Enhancing Data Science Agents with Semantics*, authored by Sayed Hoseini, Maximilian Ibbels, Maximilian Knoll, and Christoph Quix, extends the project’s research focus towards comparing the three different approaches which are also discussed in this project.
+A related follow-up publication, [Towards Enhancing Data Science Agents with Semantics](https://www.researchgate.net/publication/398383838_Towards_enhancing_data_science_agents_with_semantics), authored by Sayed Hoseini, Maximilian Ibbels, Maximilian Knoll, and Christoph Quix, extends the project’s research focus towards comparing the three different approaches which are also discussed in this project.
 
 ## AssistML Setup (Docker)
 This repository contains a dockerized version of the project.
