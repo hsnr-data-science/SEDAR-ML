@@ -140,3 +140,15 @@ If you use this work in your research or wish to refer to the baseline results p
 }
 ```
 *Towards Enhancing Data Science Agents with Semantics*
+```bibtex
+@article{hoseini2025semantics_agents,
+  author    = {Hoseini, Sayed Massih and Ibbels, Maximilian and Quix, Christoph},
+  title     = {Towards Enhancing Data Science Agents with Semantics},
+  journal   = {Computer Science and Information Systems},
+  year      = {2025},
+  note      = {OnLine-First},
+  publisher = {Computer Science and Information Systems},
+  doi       = {10.2298/CSIS250320078H},
+  url       = {https://www.researchgate.net/publication/398383838_Towards_enhancing_data_science_agents_with_semantics}
+}
+```
